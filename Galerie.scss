@@ -1,0 +1,133 @@
+
+   $font: 35px;
+    $color:white;
+    $black: black;
+    $text:center;
+    $width:100%;
+    $height:500px;
+
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+
+       header { 
+
+        height: 81px;
+        background-color:#544F54; 
+      }
+        ul   {
+        list-style: none;
+        color: $color;
+        text-align:  $text;
+        font-size:  $font /2 + 6;
+      
+
+            li 
+            {
+            display: inline;
+            padding: 30px; 
+              a 
+                {
+                  color: $color;
+                  text-decoration: none;
+                  
+              }
+            }             
+     }
+.nav2 {
+  display: none;
+  color: white;
+  margin-top: 2%;
+  margin-left: 3%;
+  
+
+  }
+.menu
+       { margin-left:2%;
+      margin-top: 3%;
+      }
+.box2 {
+          font-family: sans-serif;
+          text-align: center;
+          margin-left: 9%;
+          margin-top: -2%;
+          border: 2px solid white;
+          padding: 6%;
+          width: 71%;
+          background-color: #504B4E;
+          font-size: 20px;
+
+                a {
+                    text-decoration: none;
+                    color:     $color;
+                    }
+      }
+
+
+
+h1 { 
+  text-align:     $text;
+  font-family: sans-serif;
+  color: gray;
+ margin-top: 12%;
+ font-size:    $font - 10;
+}
+  .slide {display:flex
+    }
+
+.slideshow-container {
+  width: 90%;
+  position: relative;
+  top: 150px;
+  margin: auto;
+  margin-top: -8%;
+}
+
+.numbers {
+  position: absolute;
+  top: 0;
+  color: #f2f2f2;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.myslides {
+  display: none;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 16px;
+  margin-top: -22px;
+  border-radius: 0 3px 3px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.next {
+  right: 30%;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade img {
+  width: 70%;
+  height: 400px;
+
+}
+
+
+
+
+
+
+

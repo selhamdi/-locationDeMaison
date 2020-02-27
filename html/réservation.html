@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Galerie</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Galerie.css">
+
+</head>
+
+<body>
+  
+<header>
+    <ul>
+        <li> <a href="home.html">Galerie</a></li>
+        <li> <a href="reservations.html"> Réservations</a></li>
+        <li> <a href="incris.html"> Inscris-toi</a> </li>
+     </ul>
+        
+   <div class="nav2">
+        <div class="menu">
+          <img onclick="menu()" src="image/menu.jpg">
+        </div>
+        <div class="container" id="container">
+            <div class="box2"> <a href="home.html">Galerie</a> </div>
+            <div class="box2"> <a href="reservations.html"> Réservations</a> </div>
+            <div class="box2"> <a href="incris.html"> Inscris-toi</a>  </div>
+         </div>
+       </div> 
+
+       <script>
+           function menu()
+           {
+            var x=document.getElementById("container");
+            if(x.style.display==="none")
+            x.style.display="inline";
+            else
+            x.style.display="none";
+        }
+       </script> 
+
+</header>
+
+
+  <h1>Luxury villa in the Marrakesh region with private pool and 3 master suites</h1>
+  <div >
+    <div class="Centainer">
+      <div class="slideshow-container">
+
+        <div class="myslides fade">
+          <div class="numbers">1 / 4</div>
+          <div><img src="Image/m1.jpg"></div>
+        </div> 
+        <div class="myslides fade">
+            <div class="numbers">2 / 4</div>
+            <div><img src="Image/m12.jpg"></div>
+        </div>
+        <div class="myslides fade">
+            <div class="numbers">3 / 4</div>
+            <div><img src="Image/m13.jpg"></div>
+        </div>
+        <div class="myslides fade">
+            <div class="numbers">4 / 4</div>
+            <div><img src="Image/m14.jpg"></div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    <div>
+      <div>
+          <label for="lastname"> Nom</label><br>
+          <input  id="lastname" type="text" placeholder="Entrer votre nom"> 
+      </div>
+      <div>
+          <label for="email">P </label><br>
+          <input  id="email" type="text" placeholder="Entrer votre email">
+      </div>
+      <div class="dateBirth">
+        <input type="text" placeholder="JJ" id="JJ">
+        <input type="text" placeholder="MM" id="MM">
+        <input type="text" placeholder="YY" id="YY">
+      </div>
+      <div>
+          <label for="passwd2">Nombre de personne</label><br>
+          <input  id="password2" type="text"   placeholder="Confirmation de mot de pass">
+      </div>
+      <div>
+        <label for="passwd2">Période de location</label><br>
+        <input  id="password2" type="text"   placeholder="Confirmation de mot de pass">
+    </div>
+    <div>
+      <label for="passwd2">Nombre de personne</label><br>
+      <input  id="password2" type="text"   placeholder="Confirmation de mot de pass">
+    </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+      var slideIndex = 1;
+
+      showSlide(slideIndex);
+
+
+      function plusSlides(n) { showSlide(slideIndex += n);}
+      function currentSlide(n) { showSlide(slideIndex = n);}
+      function showSlide(n) {
+
+        var i;
+        var slides = document.getElementsByClassName("myslides");
+        var dots = document.getElementsByClassName("dots");
+
+        if (n > slides.length) {slideIndex = 1};
+
+        if (n < 1) {slideIndex = slides.length };
+
+        for (i = 0; i < slides.length; i++) 
+          { 
+          slides[i].style.display = "none";
+          };
+
+        for (i = 0; i < dots.length; i++)
+         {
+          dots[i].className = dots[i].className.replace(" active", "");
+        };
+
+        slides[slideIndex - 1].style.display = "block";
+
+        dots[slideIndex - 1].className += " active";
+
+       }
+    </script>
+</body>
+
+</html>
