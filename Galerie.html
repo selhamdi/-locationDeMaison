@@ -46,67 +46,55 @@
 
 
   <h1>Luxury villa in the Marrakesh region with private pool and 3 master suites</h1>
-  <div >
-    <div class="Centainer">
-      <div class="slideshow-container">
 
+      <div class="slideshow-container">
         <div class="myslides fade">
-          <div class="numbers">1 / 4</div>
           <div><img src="Image/m1.jpg"></div>
         </div> 
         <div class="myslides fade">
-            <div class="numbers">2 / 4</div>
             <div><img src="Image/m12.jpg"></div>
         </div>
         <div class="myslides fade">
-            <div class="numbers">3 / 4</div>
             <div><img src="Image/m13.jpg"></div>
         </div>
         <div class="myslides fade">
-            <div class="numbers">4 / 4</div>
             <div><img src="Image/m14.jpg"></div>
         </div>
      
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-    </div>
-    <div class="flex">
-      <div class="slide">
+    
+    
+     <div class="classDiv">
+      
+      <div >
+        
           <label for="lastname"> </label><br>
-          <input  id="lastname" type="text" placeholder="Entrer votre nom"> 
+          <input  id="lastname" type="text" placeholder=" Entrer votre nom"> 
       </div>
       <div>
-          <label for="email"></label><br>
-          <input  id="email" type="text" placeholder="Entrer votre email">
+          <label for="email"></label><br><br>e
+          <input  id="email" type="text" placeholder=" Entrer votre email">
       </div>
       <div class="dateBirth">
-        <input type="text" placeholder="JJ" id="JJ">
-        <input type="text" placeholder="MM" id="MM">
-        <input type="text" placeholder="YY" id="YY">
+        <input type="date"  id="JJ">
+      
       </div>
       <div>
-          <label for="passwd2"></label><br>
-          <input  id="password2" type="text"   placeholder="Nombre de personne">
+          <label for="Nombre de parsonne"></label><br>
+          <input  id="Nombre de personne" type="text"   placeholder=" Nombre de personne">
       </div>
       <div>
-        <label for="passwd2"></label><br>
-        <input  id="password2" type="text"   placeholder="Période de location">
-    </div>
-    <!-- <div>
-      <label for="passwd2">Nombre de personne</label><br>
-      <input  id="password2" type="text"   placeholder="Confirmation de mot de pass">
-    </div> -->
+        <label for=" Période de location"></label><br>
+        <input  id="Période de location" type="text"   placeholder=" Période de location">
+    </div> 
+     </div>
    
-    </div>
- 
-  </div>
-  
     <script type="text/javascript">
+
       var slideIndex = 1;
-
       showSlide(slideIndex);
-
 
       function plusSlides(n) { showSlide(slideIndex += n);}
       function currentSlide(n) { showSlide(slideIndex = n);}
@@ -114,7 +102,6 @@
 
         var i;
         var slides = document.getElementsByClassName("myslides");
-        // var dots = document.getElementsByClassName("dots");
 
         if (n > slides.length) {slideIndex = 1};
 
@@ -124,15 +111,93 @@
           { 
           slides[i].style.display = "none";
           };
-
-        // for (i = 0; i < dots.length; i++)
-        //  {
-        //   dots[i].className = dots[i].className.replace(" active", "");
-        // };
-
         slides[slideIndex - 1].style.display = "block";
 
-        // dots[slideIndex - 1].className += " active";
+function menu()
+{
+    var x=document.getElementById("container");
+    if(x.style.display==="none")
+    x.style.display="flex";
+    else
+    x.style.display="none";
+}
+
+function verifyreservation(){
+   var ln,email,regexmail,regexcarte,regexcin;
+      fn=document.getElementById("lastname").value;
+     email=document.getElementById("email").value;
+     email=document.getElementById("Nombre de personne").value;
+     email=document.getElementById("Période de location").value;
+
+      regexmail = /^[a-zA-Z0-9._-]+@[a-zA-Z]{2,6}\.[a-zA-Z]{2,4}$/;
+     
+      var regexname = /^[a-zA-Z]{3,16}$/;
+      var ad=/^[0-9]{1,3}[a-zA-Z ]{5,100}$/;
+      var cpt=0;
+      if(fn=="" || ln=="" || cin=="" || carte=="" || mail=="" || adresse=="")
+         {
+             window.alert(" Tous les champs doivent être remplis");
+             cpt++;
+         }
+       
+      if(fn!="" && ln!="" && cin!="" && carte!="" && mail!="" && adresse!="")
+     {
+         if(!regexmail.test(mail) || !regexcin.test(cin) || !regexcarte.test(carte) || !regexname.test(fn) || !regexname.test(ln) || !ad.test(adresse))
+         {
+            
+             window.alert("Respectez les formats des elements entrés");
+             cpt++;
+         }
+     }
+   
+    if(cpt==0)
+    {
+     window.confirm("la reservation est valide. Nom : "+ln+" Prenom : "+fn+" email :"+mail+" CIN:"+cin+" Carte bancaire "+carte+"adresse :"+adresse);
+    }
+
+}
+function btnover1(){
+ document.getElementById("s1r1").style.display="block";
+
+}
+function btnout1(){
+    document.getElementById("s1r1").style.display="none";
+   
+   }
+   function btnover2(){
+    document.getElementById("s1r2").style.display="block";
+   
+   }
+   function btnout2(){
+       document.getElementById("s1r2").style.display="none";
+      
+      }
+      function btnover3(){
+        document.getElementById("s1r3").style.display="block";
+       
+       }
+       function btnout3(){
+           document.getElementById("s1r3").style.display="none";
+          
+          }
+          function btnover4(){
+            document.getElementById("s1r4").style.display="block";
+           
+           }
+           function btnout4(){
+               document.getElementById("s1r4").style.display="none";
+              
+              }
+              function btnover5(){
+                document.getElementById("s1r5").style.display="block";
+               
+               }
+               function btnout5(){
+                   document.getElementById("s1r5").style.display="none";
+                  
+                  }
+                                    
+    
 
        }
     </script>
