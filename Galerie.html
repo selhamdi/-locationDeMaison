@@ -74,7 +74,7 @@
           <input  id="lastname" type="text" placeholder=" Entrer votre nom"> 
       </div>
       <div>
-          <label for="email"></label><br><br>e
+          <label for="email"></label><br><br>
           <input  id="email" type="text" placeholder=" Entrer votre email">
       </div>
       <div class="dateBirth">
@@ -82,19 +82,26 @@
       
       </div>
       <div>
-          <label for="Nombre de parsonne"></label><br>
-          <input  id="Nombre de personne" type="text"   placeholder=" Nombre de personne">
+          <label for="  Nombre de personne"></label><br>
+          <input  id="nbP" type="text"   placeholder=" Nombre de personne">
       </div>
       <div>
-        <label for=" Période de location"></label><br>
-        <input  id="Période de location" type="text"   placeholder=" Période de location">
-    </div> 
+        <label for="Période de location"></label><br>
+        <input  id="pdL" type="text"   placeholder=" Période de location">
+    </div>
+    <div class="button">
+      <input type="submit" value="valider" onclick="verifyreservation()">
+  </div>
+
+      
      </div>
+
    
     <script type="text/javascript">
-
       var slideIndex = 1;
+
       showSlide(slideIndex);
+
 
       function plusSlides(n) { showSlide(slideIndex += n);}
       function currentSlide(n) { showSlide(slideIndex = n);}
@@ -102,6 +109,7 @@
 
         var i;
         var slides = document.getElementsByClassName("myslides");
+       
 
         if (n > slides.length) {slideIndex = 1};
 
@@ -113,36 +121,33 @@
           };
         slides[slideIndex - 1].style.display = "block";
 
-function menu()
-{
-    var x=document.getElementById("container");
-    if(x.style.display==="none")
-    x.style.display="flex";
-    else
-    x.style.display="none";
+//         function menu(){
+//     var x=document.getElementById("container");
+//     if(x.style.display==="none")
+//     x.style.display="flex";
+//     else
+//     x.style.display="none";
 }
 
 function verifyreservation(){
-   var ln,email,regexmail,regexcarte,regexcin;
-      fn=document.getElementById("lastname").value;
-     email=document.getElementById("email").value;
-     email=document.getElementById("Nombre de personne").value;
-     email=document.getElementById("Période de location").value;
+   var ln,email,regexmai,nbP,pdL;
+      ln=document.getElementById("lastname").value;
+      email=document.getElementById("email").value;
+      nbP=document.getElementById("nbP").value;
+      pdl=document.getElementById("pdL").value;
 
       regexmail = /^[a-zA-Z0-9._-]+@[a-zA-Z]{2,6}\.[a-zA-Z]{2,4}$/;
-     
       var regexname = /^[a-zA-Z]{3,16}$/;
-      var ad=/^[0-9]{1,3}[a-zA-Z ]{5,100}$/;
       var cpt=0;
-      if(fn=="" || ln=="" || cin=="" || carte=="" || mail=="" || adresse=="")
+      if(ln=="" || email=="" )
          {
              window.alert(" Tous les champs doivent être remplis");
              cpt++;
          }
        
-      if(fn!="" && ln!="" && cin!="" && carte!="" && mail!="" && adresse!="")
+      if( ln!="" &&  email!="" && nbP!="" && pdL!="")
      {
-         if(!regexmail.test(mail) || !regexcin.test(cin) || !regexcarte.test(carte) || !regexname.test(fn) || !regexname.test(ln) || !ad.test(adresse))
+         if(!regexmail.test(email) || !regexname.test(ln))
          {
             
              window.alert("Respectez les formats des elements entrés");
@@ -152,55 +157,24 @@ function verifyreservation(){
    
     if(cpt==0)
     {
-     window.confirm("la reservation est valide. Nom : "+ln+" Prenom : "+fn+" email :"+mail+" CIN:"+cin+" Carte bancaire "+carte+"adresse :"+adresse);
+     window.confirm("la reservation est valide. Nom : "+ln+"  email :"+mail );
     }
 
 }
-function btnover1(){
- document.getElementById("s1r1").style.display="block";
 
-}
-function btnout1(){
-    document.getElementById("s1r1").style.display="none";
-   
-   }
-   function btnover2(){
-    document.getElementById("s1r2").style.display="block";
-   
-   }
-   function btnout2(){
-       document.getElementById("s1r2").style.display="none";
-      
-      }
-      function btnover3(){
-        document.getElementById("s1r3").style.display="block";
-       
-       }
-       function btnout3(){
-           document.getElementById("s1r3").style.display="none";
-          
-          }
-          function btnover4(){
-            document.getElementById("s1r4").style.display="block";
-           
-           }
-           function btnout4(){
-               document.getElementById("s1r4").style.display="none";
-              
-              }
-              function btnover5(){
-                document.getElementById("s1r5").style.display="block";
-               
-               }
-               function btnout5(){
-                   document.getElementById("s1r5").style.display="none";
-                  
-                  }
-                                    
-    
-
-       }
     </script>
+<footer>
+      <div class="RS">
+     <i class="fab fa-facebook" style="margin-top:2%; margin-left: 90%;"></i>
+     <i class="fab fa-linkedin"></i>
+     <i class="fab fa-twitter-square"></i>
+      </div>
+      <div class="p">
+          Privacy      Site Map    Connect with us
+      </div>
+              
+</footer>
+  <script src="all.min.js"></script>
 </body>
 
 </html>
