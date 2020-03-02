@@ -22,9 +22,12 @@
 
             }
 input {
-  width: 80%;
+  width: 100%;
   border: 1px solid gray ; 
   height: 50px;
+                         
+  &hover {  background-color:#dbbc8f;
+    }  
   }
     .dateBirth{
       margin-top: 20px;
@@ -159,3 +162,12 @@ color: white
    }
 
 
+ @media screen and ( max-width: 767px  ) {
+
+header { height:  340px}
+  .nav2 { display: inline;}
+    ul {display: none;}
+    h1 {font-size: 20px; margin-top: 55px;}
+    .slideshow-container {margin-top:-114px;}
+      .RS { margin-left: -33%;}
+    }

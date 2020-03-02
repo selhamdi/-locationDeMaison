@@ -31,17 +31,6 @@
          </div>
        </div> 
 
-       <script>
-           function menu()
-           {
-            var x=document.getElementById("container");
-            if(x.style.display==="none")
-            x.style.display="inline";
-            else
-            x.style.display="none";
-        }
-       </script> 
-
 </header>
 
 
@@ -71,23 +60,23 @@
       <div >
         
           <label for="lastname"> </label><br>
-          <input  id="lastname" type="text" placeholder=" Entrer votre nom"> 
+          <input  id="lastname" type="text" placeholder=" Entrer votre nom" onkeyup="this.value = this.value.toUpperCase();"> 
       </div>
       <div>
           <label for="email"></label><br><br>
-          <input  id="email" type="text" placeholder=" Entrer votre email">
+          <input  id="email" type="text" placeholder=" Entrer votre email" onkeyup="this.value = this.value.toUpperCase();">
       </div>
       <div class="dateBirth">
-        <input type="date"  id="JJ">
+        <input type="date"  id="JJ" required>
       
       </div>
       <div>
           <label for="  Nombre de personne"></label><br>
-          <input  id="nbP" type="text"   placeholder=" Nombre de personne">
+          <input  id="nbP" type="number"   placeholder=" Nombre de personne">
       </div>
       <div>
         <label for="Période de location"></label><br>
-        <input  id="pdL" type="text"   placeholder=" Période de location">
+        <input  id="pdL" type="number"   placeholder=" Période de location">
     </div>
     <div class="button">
       <input type="submit" value="valider" onclick="verifyreservation()">
@@ -104,11 +93,12 @@
 
 
       function plusSlides(n) { showSlide(slideIndex += n);}
-      function currentSlide(n) { showSlide(slideIndex = n);}
+      
       function showSlide(n) {
 
         var i;
         var slides = document.getElementsByClassName("myslides");
+        // console.log(slides);
        
 
         if (n > slides.length) {slideIndex = 1};
@@ -118,34 +108,33 @@
         for (i = 0; i < slides.length; i++) 
           { 
           slides[i].style.display = "none";
-          };
+          }
         slides[slideIndex - 1].style.display = "block";
 
-//         function menu(){
-//     var x=document.getElementById("container");
-//     if(x.style.display==="none")
-//     x.style.display="flex";
-//     else
-//     x.style.display="none";
+
 }
 
 function verifyreservation(){
-   var ln,email,regexmai,nbP,pdL;
+   var ln,email,nbP,pdl,date;
       ln=document.getElementById("lastname").value;
       email=document.getElementById("email").value;
       nbP=document.getElementById("nbP").value;
       pdl=document.getElementById("pdL").value;
-
-      regexmail = /^[a-zA-Z0-9._-]+@[a-zA-Z]{2,6}\.[a-zA-Z]{2,4}$/;
+      date = document.getElementById("JJ").value;
+      
+      var regexmail = /^[a-zA-Z0-9._-]+@[a-zA-Z]{2,6}\.[a-zA-Z]{2,4}$/;
       var regexname = /^[a-zA-Z]{3,16}$/;
+  
+     
+
       var cpt=0;
-      if(ln=="" || email=="" )
+      if(ln=="" || email=="" || nbP=="" ||  pdL=="" || date == "" )
          {
              window.alert(" Tous les champs doivent être remplis");
              cpt++;
          }
        
-      if( ln!="" &&  email!="" && nbP!="" && pdL!="")
+      if( ln!="" && email!="" && nbP!="" && pdL!="")
      {
          if(!regexmail.test(email) || !regexname.test(ln))
          {
@@ -157,10 +146,18 @@ function verifyreservation(){
    
     if(cpt==0)
     {
-     window.confirm("la reservation est valide. Nom : "+ln+"  email :"+mail );
+     window.confirm("la reservation est valide. Nom : "+ln+"  email : "+email+"  nombre de personne: "+nbP+" période de location est :"+pdl );
     }
 
 }
+function menu()
+           {
+            var x=document.getElementById("container");
+            if(x.style.display==="none")
+            x.style.display="inline";
+            else
+            x.style.display="none";
+          }   
 
     </script>
 <footer>
