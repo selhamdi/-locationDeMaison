@@ -92,10 +92,15 @@ h1 {
   text-align:     $text;
   font-family: sans-serif;
   color: gray;
- margin-top: 12%;
- font-size:    $font - 10;
+ margin-top: 5%;
+ font-size:  $font - 10;
 }
-  .slide {display:flex
+  .slide {
+    display:flex;
+    width: 90%;
+    height: 770px;
+    margin-left: 5%;
+    margin-top: 3%;
     }
 
 .slideshow-container {
@@ -113,7 +118,8 @@ h1 {
 .prev,
 .next {
   position: absolute;
-  top: 50%;
+  top: 64%;
+  margin-left: 7%;
   font-size: 18px;
   font-weight: bold;
   padding: 16px;
@@ -124,8 +130,8 @@ h1 {
 }
 
 .next {
-  top: 53%;
-  right: 1%;
+  top: 64%;
+  right: 7%;
   border-radius: 3px 0 0 3px;
 }
 
